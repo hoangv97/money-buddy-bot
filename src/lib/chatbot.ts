@@ -56,7 +56,7 @@ export const processMessage = async (requestData: any) => {
         const rowDate = new Date(row.get('Time'));
         const now = new Date();
         return (
-          senderId === row.get('Sender') &&
+          // senderId === row.get('Sender') &&
           rowDate.getMonth() === now.getMonth() &&
           rowDate.getFullYear() === now.getFullYear()
         );
