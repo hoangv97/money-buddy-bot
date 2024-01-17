@@ -26,8 +26,5 @@ export async function POST(req: NextRequest) {
 
   const response = await processMessage(body);
 
-  return NextResponse.json(
-    { message: JSON.stringify(response) },
-    { status: 200 }
-  );
+  return NextResponse.json({ message: 'ok' }, { status: 200 });
 }
