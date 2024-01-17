@@ -29,12 +29,13 @@ export const processMessage = async (requestData: any) => {
     const now = new Date().toISOString();
 
     // save to google sheet
-    await addRow({
+    const response = await addRow({
       Sender: senderId,
       Content: content,
       Cost: cost,
       Time: now,
     });
+    return response;
   } catch (error) {
     // console.log(JSON.stringify(requestData, null, 2));
 

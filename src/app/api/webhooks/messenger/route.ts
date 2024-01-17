@@ -24,7 +24,10 @@ export async function GET(req: NextRequest) {
 export async function POST(req: NextRequest) {
   const body = await req.json();
 
-  await processMessage(body);
+  const response = await processMessage(body);
 
-  return NextResponse.json({ message: 'Hello World' }, { status: 200 });
+  return NextResponse.json(
+    { message: JSON.stringify(response) },
+    { status: 200 }
+  );
 }
