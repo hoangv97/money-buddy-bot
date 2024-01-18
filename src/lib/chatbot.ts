@@ -66,7 +66,13 @@ export const processMessage = async (requestData: any) => {
         0
       );
 
-      await sendMessage(senderId, `Your monthly expense is ${totalCost}.`);
+      // add comma after 3 digits to totalCost
+      const totalCostWithDots = Number(totalCost).toLocaleString('en-US');
+
+      await sendMessage(
+        senderId,
+        `Your monthly expense is ${totalCostWithDots}.`
+      );
       return;
     }
 
