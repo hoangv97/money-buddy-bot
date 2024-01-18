@@ -9,8 +9,8 @@ export const processMessage = async (requestData: any) => {
     // extract the message
     const message = requestData.entry[0].messaging[0].message.text;
 
-    // analyze the message, use regex to get data by format: content cost_in_number
-    const regex = /(.*) (\d+)/;
+    // analyze the message, use regex to get data by format: content cost_in_number (can be k)
+    const regex = /(.+) (\d+k?)/;
     const match = message.match(regex);
     const content = match[1];
     let cost = match[2];
