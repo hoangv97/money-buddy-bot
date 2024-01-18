@@ -30,7 +30,7 @@ export const processMessage = async (requestData: any) => {
 
     // save to google sheet
     const response = await addRow({
-      Sender: senderId,
+      Sender: senderId + '',
       Content: content,
       Cost: cost,
       Time: now,
